@@ -1,11 +1,16 @@
 <template>
   <div id="app">
+    <img
+      class="profile"
+      src="./assets/images/aimy.png"
+    >
     <h1 class="title">
-      Hey I'm AImy, the CPT Therapist!
+      Hey I'm AImy, the CPT Therapist 😊
     </h1>
-  
+      
     <p class="intro">
-      {{ intro }}
+      It's great to meet you! I am a therapy chatbot trained in Cognitive Behavioral Therapy (CBT).<br>
+      Go ahead and hit the blue button to start a conversation with me!
     </p>
     <button
       class="btn"
@@ -33,7 +38,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      intro: '',
+    //   intro: '',
       response: '',
       yousaid:'',
       recognition: null,
@@ -41,14 +46,15 @@ export default {
     };
 },
 async mounted() {
-    try {
-    const res = await axios.post('http://127.0.0.1:5000/api/ask', {
-        message: 'Who are you? Give me a brief intro',
-    });
-    this.intro = res.data.response;
-    } catch (error) {
-    console.error('Error:', error);
-    }
+    // try {
+    // const res = await axios.post('http://127.0.0.1:5000/api/ask', {
+    //     message: 'Who are you? Give me a brief intro',
+    // });
+    // this.intro = res.data.response;
+    // console.log("intro: "+ this.intro)
+    // } catch (error) {
+    // console.error('Error:', error);
+    // }
 },
 methods: {
     toggleListening() {
@@ -91,18 +97,18 @@ methods: {
 </script>
 
 
-<style scoped>
-
-
+<style>
 
 #app {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-right: 50px;
     font-family: 'SF Pro Text', 'Helvetica Neue', 'Arial', sans-serif;
-    color: #333;
+    color: white;
 }
 
 .title {
@@ -112,6 +118,8 @@ methods: {
 
 .intro {
     margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
     text-align: center;
 }
 
@@ -124,7 +132,7 @@ methods: {
 .btn {
     border: none;
     padding: 10px 20px;
-    background-color: #007AFF;
+    background-color: #85A8EC;
     color: white;
     border-radius: 5px;
     font-weight: 600;
@@ -133,7 +141,7 @@ methods: {
 }
 
 .btn[isListening='true'] {
-  background-color: #FF3B30;
+  background-color: #85A8EC;
 }
 /* .btn.stop {
   background-color: #FF3B30;
@@ -149,13 +157,21 @@ methods: {
 }
 
 .text {
-  background-color: #F8F8F8;
   border-radius: 5px;
   padding: 20px;
   width: 100%;
   max-width: 500px;
   word-break: break-word;
   margin-bottom: 30px;
+}
+.profile {
+    max-width: 40%;
+}
+body {
+  background-image: url("~@/assets/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>
   
