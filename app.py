@@ -7,7 +7,7 @@ import struct
 import math
 
 # Add your openai.api_key here
-openai.api_key = "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"
+openai.api_key = "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"
 
 app = Flask(__name__)
 CORS(app)
@@ -27,4 +27,4 @@ def ask():
     return jsonify({'response': response})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

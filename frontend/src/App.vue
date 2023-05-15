@@ -1,14 +1,20 @@
 <template>
-    <div id="app">
-      <h1>Hey I'm AImy, the CPT Therapist!</h1>
+  <div id="app">
+    <h1>Hey I'm AImy, the CPT Therapist!</h1>
   
-      <p>{{intro}}</p>
-      <button @click="startListening">Start Listening</button>
-      <button @click="stopListening">Stop Listening</button>
-      <h2>Response:</h2>
-      <div>{{response}}</div>
-    </div>
-  </template>
+    <p>{{ intro }}</p>
+    <button @click="startListening">
+      Start Listening
+    </button>
+    <button @click="stopListening">
+      Stop Listening
+    </button>
+    <h2>You said:</h2>
+    <div>{{ yousaid }}</div>
+    <h2>Response:</h2>
+    <div>{{ response }}</div>
+  </div>
+</template>
   
   <script>
   import axios from 'axios';
@@ -18,6 +24,7 @@
       return {
         intro: '',
         response: '',
+        yousaid:'',
         recognition: null,
       };
     },
@@ -38,6 +45,7 @@
   
         this.recognition.onresult = (event) => {
           const transcript = event.results[0][0].transcript; // Get the transcribed speech
+          this.yousaid = transcript;
           this.sendMessage(transcript); // Send the transcribed speech as a message
         };
   
@@ -50,7 +58,7 @@
       },
       async sendMessage(message) {
         try {
-          const res = await axios.post('http://127.0.0.1:5000/api/ask', {
+          const res = await axios.post('http://127.0.0.1:5001/api/ask', {
             message: message,
           });
           this.response = res.data.response;
@@ -61,4 +69,14 @@
     },
   };
   </script>
+  
+  <style scoped>
+  #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  </style>
   

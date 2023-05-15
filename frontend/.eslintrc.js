@@ -1,15 +1,13 @@
 module.exports = {
-    plugins: ['vue', 'import', 'node','jsconfig.json','postcss.config.json'],
+    plugins: ['vue', 'import', 'node'],
     extends: [
-      // ...
       'plugin:vue/recommended',
       'plugin:import/errors',
       'plugin:import/warnings',
     ],
     ignorePatterns: ['node_modules/', ],
   
-    // ...
-    parser: '@babel/eslint-parser',
+    parser: 'vue-eslint-parser',
   
     parserOptions: {
         ecmaVersion: 2020,
