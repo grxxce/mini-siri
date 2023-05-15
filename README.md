@@ -3,5 +3,5 @@ The following is a mini-siri therapy chatpot I created with OpenAI's ChatGPT API
 
 ### Demonstration Video
 
-Here's a demonstration video to show how AImy works!
-https://youtu.be/Kfcs3nlMqlM
+Here's a [demonstration video]([url](https://youtu.be/Kfcs3nlMqlM
+)) to show how AImy works!
