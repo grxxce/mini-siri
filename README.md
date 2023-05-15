@@ -6,9 +6,7 @@ I'm currently hosting the site to make it more accessible. The end goal for this
 Before that's ready, below is a demo video and some instructions to get the terminal version set up locally. Have fun!
 
 ### Demonstration Video
-
-Here's a [demonstration video]([url](https://youtu.be/Kfcs3nlMqlM
-)) to show how AImy works!
+Here's a [demonstration video](https://youtu.be/Kfcs3nlMqlM) to show how AImy works!
 
 # Installation
 ### Clone the repository
