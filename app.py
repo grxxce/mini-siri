@@ -7,7 +7,7 @@ import struct
 import math
 
 # Add your openai.api_key here
-openai.api_key = "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"
+openai.api_key = "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"
 
 app = Flask(__name__)
 CORS(app)
